@@ -25,4 +25,5 @@
         * [2.2.1 函数传参](chapter/chapter2/chapter2.2/post/chapter2.2.1.md)
         * [2.2.2 默认参数](chapter/chapter2/chapter2.2/post/chapter2.2.2.md)
         * [2.2.3 多参数传递](chapter/chapter2/chapter2.2/post/chapter2.2.3.md)
+        * [2.2.4 参数分类](chapter/chapter2/chapter2.2/post/chapter2.2.4.md)
 
