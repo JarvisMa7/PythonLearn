@@ -25,6 +25,8 @@
 * [1.3.4 HereDoc](chapter/chapter1/chapter1.3/post/chapter1.3.4.md)
 
 ## 2. 函数
+
+## 2.1 函数是一等公民
 * [2.1 函数是一等公民](chapter/chapter2/chapter2.1/chapter2.1.md)
 
 ## 2.2 函数参数
@@ -32,7 +34,9 @@
 * [2.2.2 默认参数](chapter/chapter2/chapter2.2/post/chapter2.2.2.md)
 * [2.2.3 多参数传递](chapter/chapter2/chapter2.2/post/chapter2.2.3.md)
 * [2.2.4 参数分类](chapter/chapter2/chapter2.2/post/chapter2.2.4.md)
-    * [2.3 函数内省](chapter/chapter2/chapter2.3/chapter2.3.md)
+
+## 2.3 函数内省
+* [2.3 函数内省](chapter/chapter2/chapter2.3/chapter2.3.md)
 
 ## 2.4 参数分类
 * [2.4.1 设计模式的消亡](chapter/chapter2/chapter2.4/post/chapter2.4.1.md)
