@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>2.4.1 设计模式的消亡 · GitBook</title>
+        <title>2.4.2 装饰器的基本原理 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="../../../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="chapter2.4.2.html" />
     
-    
-    <link rel="prev" href="../../chapter2.3/chapter2.3.html" />
+    <link rel="prev" href="chapter2.4.1.html" />
     
 
     </head>
@@ -425,7 +423,7 @@
         
         
     
-        <li class="chapter active" data-level="10.1" data-path="chapter2.4.1.html">
+        <li class="chapter " data-level="10.1" data-path="chapter2.4.1.html">
             
                 <a href="chapter2.4.1.html">
             
@@ -438,7 +436,7 @@
             
         </li>
     
-        <li class="chapter " data-level="10.2" data-path="chapter2.4.2.html">
+        <li class="chapter active" data-level="10.2" data-path="chapter2.4.2.html">
             
                 <a href="chapter2.4.2.html">
             
@@ -481,7 +479,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../../../.." >2.4.1 设计模式的消亡</a>
+        <a href="../../../.." >2.4.2 装饰器的基本原理</a>
     </h1>
 </div>
 
@@ -496,16 +494,30 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="241-&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x7684;&#x6D88;&#x4EA1;">2.4.1 &#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x7684;&#x6D88;&#x4EA1;</h1>
-<p>&#x7ECF;&#x5178;&#x7684;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x6709; 23 &#x4E2A;&#xFF0C;&#x867D;&#x7136;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x90FD;&#x662F;&#x5E38;&#x7528;&#x4EE3;&#x7801;&#x7684;&#x603B;&#x7ED3;&#xFF0C;&#x7406;&#x8BBA;&#x4E0A;&#x6765;&#x8BF4;&#x4E0E;&#x8BED;&#x6CD5;&#x65E0;&#x5173;&#x3002;&#x4F46;&#x4E0D;&#x5F97;&#x4E0D;&#x627F;&#x8BA4;&#x7684;&#x662F;&#xFF0C;&#x6807;&#x51C6;&#x7684;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x5728;&#x4E0D;&#x540C;&#x7684;&#x8BED;&#x8A00;&#x4E2D;&#xFF0C;&#x6709;&#x7684;&#x56E0;&#x4E3A;&#x8BED;&#x6CD5;&#x7684;&#x9650;&#x5236;&#x6839;&#x672C;&#x65E0;&#x6CD5;&#x8F7B;&#x6613;&#x5B9E;&#x73B0;&#xFF08;&#x6BD4;&#x5982;&#x5728; C &#x8BED;&#x8A00;&#x4E2D;&#x5B9E;&#x73B0;&#x7EC4;&#x5408;&#x6A21;&#x5F0F;&#xFF09;&#xFF0C;&#x6709;&#x7684;&#x5219;&#x56E0;&#x4E3A;&#x8BED;&#x8A00;&#x7684;&#x7279;&#x5B9A;&#x529F;&#x80FD;&#xFF0C;&#x53D8;&#x5F97;&#x5197;&#x4F59;&#x5570;&#x55E6;&#x3002;</p>
-<p>&#x4EE5;&#x7B56;&#x7565;&#x6A21;&#x5F0F;&#x4E3A;&#x4F8B;&#xFF0C;&#x6709;&#x4E00;&#x4E2A;&#x62BD;&#x8C61;&#x7684;&#x7B56;&#x7565;&#x7C7B;&#xFF0C;&#x5B9A;&#x4E49;&#x4E86;&#x7B56;&#x7565;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x7136;&#x540E;&#x4F7F;&#x7528;&#x8005;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x5177;&#x4F53;&#x7684;&#x7B56;&#x7565;&#x7C7B;&#xFF0C;&#x6784;&#x9020;&#x4ED6;&#x4EEC;&#x7684;&#x5B9E;&#x4F8B;&#x5E76;&#x4E14;&#x8C03;&#x7528;&#x7B56;&#x7565;&#x65B9;&#x6CD5;&#x3002;&#x5177;&#x4F53;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#xFF1A;<a href="https://baike.baidu.com/item/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/646307?fr=aladdin" target="_blank">&#x7B56;&#x7565;&#x6A21;&#x5F0F;&#x5728;&#x767E;&#x5EA6;&#x767E;&#x79D1;&#x7684;&#x5B9A;&#x4E49;</a>&#x3002;</p>
-<p>&#x7136;&#x800C;&#x8FD9;&#x4E9B;&#x5BF9;&#x8C61;&#x672C;&#x8EAB;&#x5E76;&#x6CA1;&#x6709;&#x4F5C;&#x7528;&#xFF0C;&#x5B83;&#x4EEC;&#x4EC5;&#x4EC5;&#x662F;&#x53EF;&#x4EE5;&#x8C03;&#x7528;&#x76F8;&#x540C;&#x7684;&#x65B9;&#x6CD5;&#x800C;&#x5DF2;&#xFF0C;&#x53EA;&#x4E0D;&#x8FC7;&#x5728; Java &#x4E2D;&#xFF0C;&#x6240;&#x6709;&#x7684;&#x4EFB;&#x52A1;&#x90FD;&#x9700;&#x8981;&#x7531;&#x5BF9;&#x8C61;&#x6765;&#x5B8C;&#x6210;&#x3002;&#x5373;&#x4F7F;&#x7B56;&#x7565;&#x672C;&#x8EAB;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x4F46;&#x4E5F;&#x5FC5;&#x987B;&#x628A;&#x5B83;&#x5305;&#x88F9;&#x5728;&#x4E00;&#x4E2A;&#x7B56;&#x7565;&#x5BF9;&#x8C61;&#x4E2D;&#x3002;&#x6240;&#x4EE5;&#x5728; Python &#x4E2D;&#x66F4;&#x4F18;&#x96C5;&#x5199;&#x6CD5;&#x662F;&#x76F4;&#x63A5;&#x628A;&#x7B56;&#x7565;&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x53D8;&#x91CF;&#x4F7F;&#x7528;&#x3002;&#x4E0D;&#x8FC7;&#x8FD9;&#x5C31;&#x5F15;&#x5165;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x5982;&#x4F55;&#x5224;&#x65AD;&#x67D0;&#x4E2A;&#x51FD;&#x6570;&#x662F;&#x4E2A;&#x7B56;&#x7565;&#x5462;&#xFF0C;&#x6BD5;&#x7ADF;&#x5728;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7684;&#x5199;&#x6CD5;&#x4E2D;&#xFF0C;&#x53EA;&#x8981;&#x68C0;&#x67E5;&#x5B83;&#x7684;&#x7236;&#x7C7B;&#x662F;&#x5426;&#x662F;&#x62BD;&#x8C61;&#x7684;&#x7B56;&#x7565;&#x7C7B;&#x5373;&#x53EF;&#x3002;</p>
-<p>&#x4E5F;&#x8BB8;&#x4F60;&#x5DF2;&#x7ECF;&#x89C1;&#x8FC7;&#x7C7B;&#x4F3C;&#x7684;&#x5199;&#x6CD5;&#xFF1A;</p>
-<pre><code class="lang-python"><span class="hljs-meta">@strategy</span>
-<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">strategyA</span><span class="hljs-params">(n)</span>:</span>
-    print(n * <span class="hljs-number">2</span>)
+                                <h1 id="242-&#x88C5;&#x9970;&#x5668;&#x7684;&#x57FA;&#x672C;&#x539F;&#x7406;">2.4.2 &#x88C5;&#x9970;&#x5668;&#x7684;&#x57FA;&#x672C;&#x539F;&#x7406;</h1>
+<p>&#x9996;&#x5148;&#xFF0C;&#x88C5;&#x9970;&#x5668;&#x662F;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x5B83;&#x7684;&#x53C2;&#x6570;&#x662F;&#x88AB;&#x88C5;&#x9970;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x8FD4;&#x56DE;&#x503C;&#x4E5F;&#x662F;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">decorate</span><span class="hljs-params">(origin_func)</span>:</span>  <span class="hljs-comment"># &#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x88AB;&#x88C5;&#x9970;&#x7684;&#x51FD;&#x6570;</span>
+    print(<span class="hljs-number">1</span>)  <span class="hljs-comment"># &#x5148;&#x8F93;&#x51FA;&#x70B9;&#x4E1C;&#x897F;</span>
+    <span class="hljs-keyword">return</span> origin_func  <span class="hljs-comment"># &#x628A;&#x539F;&#x51FD;&#x6570;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;</span>
+
+<span class="hljs-meta">@decorate    # &#x6CE8;&#x610F;&#x8FD9;&#x91CC;&#x4E0D;&#x662F;&#x51FD;&#x6570;&#x8C03;&#x7528;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x7528;&#x52A0;&#x62EC;&#x53F7;&#xFF0C;&#x4E5F;&#x4E0D;&#x7528;&#x52A0;&#x88AB;&#x4FEE;&#x9970;&#x7684;&#x51FD;&#x6570;&#x540D;</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">sayHello</span><span class="hljs-params">()</span>:</span>
+    print(<span class="hljs-string">&apos;Hello&apos;</span>)
+
+sayHello()  <span class="hljs-comment"># &#x5982;&#x679C;&#x6CA1;&#x6709;&#x88C5;&#x9970;&#x5668;&#xFF0C;&#x53EA;&#x4F1A;&#x6253;&#x5370; &apos;Hello&apos;&#xFF0C;&#x5B9E;&#x9645;&#x7ED3;&#x679C;&#x662F;&#x6253;&#x5370; 1 &#x518D;&#x6253;&#x5370; &apos;Hello&apos;</span>
 </code></pre>
-<p>&#x4E0B;&#x9762;&#x5C31;&#x5F00;&#x59CB;&#x4ECB;&#x7ECD;&#x88C5;&#x9970;&#x5668;&#x3002;</p>
+<p>&#x56E0;&#x6B64;&#xFF0C;&#x4F7F;&#x7528;&#x88C5;&#x9970;&#x5668;&#x7684;&#x8FD9;&#x79CD;&#x5199;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-meta">@decorate</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">foo</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">pass</span>
+</code></pre>
+<p>&#x548C;&#x4E0B;&#x9762;&#x8FD9;&#x79CD;&#x5199;&#x6CD5;&#x662F;&#x5B8C;&#x5168;&#x7B49;&#x4EF7;&#x7684;&#xFF0C; &#x521D;&#x5B66;&#x8005;&#x53EF;&#x4EE5;&#x628A;&#x88C5;&#x9970;&#x5668;&#x5728;&#x5FC3;&#x4E2D;&#x9ED8;&#x9ED8;&#x7684;&#x8F6C;&#x6362;&#x6210;&#x4E0B;&#x4E00;&#x79CD;&#x5199;&#x6CD5;&#xFF0C;&#x4EE5;&#x65B9;&#x4FBF;&#x7406;&#x89E3;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">foo</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-keyword">pass</span>
+foo = decorate(foo)
+</code></pre>
+<p>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x88C5;&#x9970;&#x5668;&#x51FD;&#x6570; <code>decorate</code> &#x5728;&#x6A21;&#x5757;&#x88AB;&#x5BFC;&#x5165;&#x65F6;&#x5C31;&#x4F1A;&#x6267;&#x884C;&#xFF0C;&#x800C;&#x88AB;&#x88C5;&#x9970;&#x7684;&#x51FD;&#x6570;&#x53EA;&#x5728;&#x88AB;&#x8C03;&#x7528;&#x65F6;&#x624D;&#x4F1A;&#x6267;&#x884C;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x5373;&#x4F7F;&#x4E0D;&#x8C03;&#x7528; <code>sayHello</code> &#x51FD;&#x6570;&#x4E5F;&#x4F1A;&#x8F93;&#x51FA; 1&#xFF0C;&#x4F46;&#x8FD9;&#x6837;&#x5C31;&#x4E0D;&#x4F1A;&#x8F93;&#x51FA; Hello &#x4E86;&#x3002;</p>
+<p>&#x6709;&#x4E86;&#x88C5;&#x9970;&#x5668;&#xFF0C;&#x914D;&#x5408;&#x524D;&#x9762;&#x4ECB;&#x7ECD;&#x7684;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#xFF0C;&#x51FD;&#x6570;&#x5185;&#x7701;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x505A;&#x5F88;&#x591A;&#x6709;&#x610F;&#x601D;&#x7684;&#x4E8B;&#xFF0C;&#x81F3;&#x5C11;&#x5224;&#x65AD;&#x4E0A;&#x4E00;&#x8282;&#x4E2D;&#x67D0;&#x4E2A;&#x51FD;&#x6570;&#x662F;&#x5426;&#x662F;&#x7B56;&#x7565;&#x662F;&#x975E;&#x5E38;&#x5BB9;&#x6613;&#x7684;&#x3002;&#x5728;&#x88C5;&#x9970;&#x5668;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x53EF;&#x4EE5;&#x628A;&#x7B56;&#x7565;&#x51FD;&#x6570;&#x90FD;&#x4FDD;&#x5B58;&#x5230;&#x6570;&#x7EC4;&#x4E2D;&#xFF0C; &#x7136;&#x540E;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x201C;&#x63A8;&#x8350;&#x6700;&#x4F73;&#x7B56;&#x7565;&#x201D;&#x7684;&#x529F;&#x80FD;&#xFF0C; &#x5176;&#x5B9E;&#x5C31;&#x662F;&#x904D;&#x5386;&#x6267;&#x884C;&#x6240;&#x6709;&#x7684;&#x7B56;&#x7565;&#xFF0C;&#x7136;&#x540E;&#x9009;&#x62E9;&#x6700;&#x597D;&#x7684;&#x7ED3;&#x679C;&#x3002;</p>
 
                                 
                                 </section>
@@ -533,14 +545,10 @@
 
             
                 
-                <a href="../../chapter2.3/chapter2.3.html" class="navigation navigation-prev " aria-label="Previous page: 2.3 函数内省">
+                <a href="chapter2.4.1.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 2.4.1 设计模式的消亡">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="chapter2.4.2.html" class="navigation navigation-next " aria-label="Next page: 2.4.2 装饰器的基本原理">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -549,7 +557,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"2.4.1 设计模式的消亡","level":"10.1","depth":1,"next":{"title":"2.4.2 装饰器的基本原理","level":"10.2","depth":1,"path":"chapter/chapter2/chapter2.4/post/chapter2.4.2.md","ref":"chapter/chapter2/chapter2.4/post/chapter2.4.2.md","articles":[]},"previous":{"title":"2.3 函数内省","level":"9.1","depth":1,"path":"chapter/chapter2/chapter2.3/chapter2.3.md","ref":"chapter/chapter2/chapter2.3/chapter2.3.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter/chapter2/chapter2.4/post/chapter2.4.1.md","mtime":"2018-09-16T18:49:26.414Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-17T14:57:18.916Z"},"basePath":"../../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"2.4.2 装饰器的基本原理","level":"10.2","depth":1,"previous":{"title":"2.4.1 设计模式的消亡","level":"10.1","depth":1,"path":"chapter/chapter2/chapter2.4/post/chapter2.4.1.md","ref":"chapter/chapter2/chapter2.4/post/chapter2.4.1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter/chapter2/chapter2.4/post/chapter2.4.2.md","mtime":"2018-09-17T14:57:13.951Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-09-17T14:57:18.916Z"},"basePath":"../../../..","book":{"language":""}});
         });
     </script>
 </div>
