@@ -42,4 +42,5 @@
 * [2.4.1 设计模式的消亡](chapter/chapter2/chapter2.4/post/chapter2.4.1.md)
 * [2.4.2 装饰器的基本原理](chapter/chapter2/chapter2.4/post/chapter2.4.2.md)
 * [2.4.3 装饰器进阶](chapter/chapter2/chapter2.4/post/chapter2.4.3.md)
+* [2.4.4 装饰器工厂](chapter/chapter2/chapter2.4/post/chapter2.4.4.md)
 
