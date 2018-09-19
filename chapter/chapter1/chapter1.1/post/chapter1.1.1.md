@@ -25,7 +25,7 @@ small = [n * 2 for n in array if n < 4]
 
 
 ```python
-sign = ['+', '-']
+signs = ['+', '-']
 numbers = [1, 2]
 
 ascii = ['{sign}{number}'.format(sign=sign, number=number)
