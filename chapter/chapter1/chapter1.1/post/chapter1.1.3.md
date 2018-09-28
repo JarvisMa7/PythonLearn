@@ -31,7 +31,7 @@ array[:n] + array[n:] = array(0 <= n <= len(array))
 
 ```python
 s = 'hello'
-s[:2] + s[2:] = s
+s[:2] + s[2:] == s
 # True. 因为 s[:2] 是 'he'，s[2:] 是 'llo'
 ```
 
