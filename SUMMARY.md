@@ -48,8 +48,8 @@
 
 ## 3.1 对象内存管理
 * [3.1.1 对象不是盒子](chapter/chapter3/chapter3.1/post/chapter3.1.1.md)
-* [3.1.2 对象不是盒子](chapter/chapter3/chapter3.1/post/chapter3.1.2.md)
-* [3.1.3 对象不是盒子](chapter/chapter3/chapter3.1/post/chapter3.1.3.md)
+* [3.1.2 默认浅复制](chapter/chapter3/chapter3.1/post/chapter3.1.2.md)
+* [3.1.3 弱引用](chapter/chapter3/chapter3.1/post/chapter3.1.3.md)
 
 ## 3.2 Python 风格的对象
 * [3.2.1 静态函数与类方法](chapter/chapter3/chapter3.2/post/chapter3.2.1.md)
